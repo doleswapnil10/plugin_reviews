@@ -1,0 +1,10 @@
+<isdecorate template="review/layout/review">
+    <div class="container">
+        <div class="row">
+            <div class="review-link">
+                <a href="${dw.web.URLUtils.https('Review-Show','orderNo',pdict.order.orderNo)}">Add Review</a>
+                ${dw.web.URLUtils.https('Review-Show','orderNo',pdict.order.orderNo)}
+            </div>
+        </div>
+    </div>
+</isdecorate>

@@ -1,0 +1,16 @@
+<!--- TEMPLATENAME: reviewform.isml --->
+<div class="form-group required">
+    <label class="form-control-label" for="review-text">
+        <isprint value="${Resource.msg('label.input.review','forms',null)}" encoding="htmlcontent" />
+    </label>
+    <textarea class="form-control review-text" id="review-text" rows="4" cols="5" maxlength="250" <isprint value="${pdict.addreviewratingForm.review.attributes}" encoding="off"/>></textarea>
+    <div class="invalid-feedback"></div>
+</div>
+
+<div class="form-group required">
+    <label class="form-control-label" for="nickname-text">
+        <isprint value="${Resource.msg('label.input.nickname','forms',null)}" encoding="htmlcontent" />
+    </label>
+    <input type="text" class="form-control nickname-text" id="nickname-text" rows="4" cols="5" maxlength="250" <isprint value="${pdict.addreviewratingForm.nickname.attributes}" encoding="off"/>>
+    <div class="invalid-feedback"></div>
+</div>

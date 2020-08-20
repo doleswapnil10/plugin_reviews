@@ -1,0 +1,19 @@
+<!--- TEMPLATENAME: reviewsDetails.isml --->
+<isloop items="${pdict.reviews}" var="review">
+    <div class="review-result row">
+        <div class="col-6 reviewer-name">
+            <h3 class="reviewer-name hidden-sm-down">${review.nickname}</h3>
+        </div>
+        <div class="col-6">
+            <isset name="rating" value="${review.rating}" scope="page" />
+            <div class="rating">
+                <isinclude template="product/components/productRating" />
+            </div>
+        </div>
+        <div class="col-6 reviewText">${review.review}</div>
+        <div class="col-6 reviewedDate">${Resource.msgf('review.submitted', 'review', null, review.date)} </div>
+        <div class="col">
+            <hr class="line-item-divider">
+        </div>
+    </div>
+</isloop>

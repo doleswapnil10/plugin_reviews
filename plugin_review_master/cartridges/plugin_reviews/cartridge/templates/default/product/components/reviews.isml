@@ -1,0 +1,28 @@
+<!--- TEMPLATENAME: reviews.isml --->
+<div class="col-3">
+    <h2>${Resource.msg('review.totalreviews', 'review', null)}</h2>
+</div>
+<div class="col-9 row">
+    <div class="col-6">
+        <h2>${Resource.msgf('review.heading', 'review', null,
+            pdict.reviews.length)}</h2>
+    </div>
+    <div class="col-4 pull-right">
+        <input type="hidden" class="sort-productid" value="${pdict.productID}">
+        <select class="form-control custom-select product-reviews-sorting">
+            <option value="" selected disabled>${Resource.msg('review.sort.by',
+                'review', null)}</option>
+            <option value="${URLUtils.url('Review-Sort')}"
+                data-sort="lowestrated">${Resource.msg('review.lowest.rated',
+                'review', null)}</option>
+            <option value="${URLUtils.url('Review-Sort')}"
+                data-sort="highestrated">${Resource.msg('review.highest.rated',
+                'review', null)}</option>
+        </select>
+    </div>
+    <hr class="line-item-divider">
+
+    <div class="show-reviews">
+        <isinclude template="product/components/reviewsDetail" />
+    </div>
+</div>

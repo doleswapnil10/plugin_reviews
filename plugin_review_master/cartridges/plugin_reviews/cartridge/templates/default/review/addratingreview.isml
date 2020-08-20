@@ -1,0 +1,22 @@
+<form action="${pdict.continueUrl}" id="reviews" method="post" <isprint value="${pdict.addreviewratingForm.attributes}" encoding="off" />>
+    <input type="hidden" class="orderNo" name="dwfrm_addreviewrating_orderNo" value="${pdict.order.orderNumber}"/>
+    <input type="hidden" class="lineItem" name="dwfrm_addreviewrating_lineItem" value="${lineItem.id}"/>
+    <div class="card">
+        <div class="card-body">
+            <div class="col">
+                <isinclude template="review/productCard/productCard" />
+                <div class="col"><hr class="line-item-divider"></div>
+            </div>
+            <div class="col">
+                <p>Your Rating</p>
+                <isinclude template="review/rating" />
+            </div>
+            <div class="col">
+                <isinclude template="review/review" />
+            </div>
+            <div class="col">
+                <button type="submit" <isprint value="${pdict.addreviewratingForm.apply.attributes}" encoding="off"/> class="btn btn-primary submit-review">Submit Review</button>
+            </div>
+        </div> 
+    </div>
+</form>

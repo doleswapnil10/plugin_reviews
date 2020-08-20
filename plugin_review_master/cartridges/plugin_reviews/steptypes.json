@@ -1,0 +1,23 @@
+{
+    "step-types": {
+        "script-module-step": [{
+                "@type-id": "custom.sendReviewLink",
+                "module": "app_custom_review/cartridge/scripts/job/sendReviewLink.js",
+                "description": "",
+                "function": "sendNotification",
+                "parameters": {},
+                "status-codes": {
+                    "status": [{
+                            "@code": "ERROR",
+                            "description": "Used when an error occurred."
+                        },
+                        {
+                            "@code": "OK",
+                            "description": "Used when execution was successful."
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

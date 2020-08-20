@@ -1,0 +1,40 @@
+<!--- TEMPLATENAME: addratingreview.isml --->
+<isdecorate template="review/layout/review">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addCss('/css/review/rating.css');
+        assets.addJs('/js/review.js');
+    </isscript>
+    <div class="hero slant-down">
+        <h1 class="page-title">${Resource.msg('label.input.review.title','review',null)}</h1>
+    </div>
+    <div class="container">
+        <isif condition="${!pdict.order.reviewed || pdict.order.reviewed === null}">
+            <isloop items="${pdict.order.shipping}" var="shippingModel">
+                <isloop items="${shippingModel.productLineItems.items}" var="lineItem">
+                    <div class="row justify-content-center">
+                        <div class="col"></div>
+                        <div class="col-8">
+                            <isif condition="${!lineItem.reviewed}">
+                                <isif condition="${lineItem.productType === 'bundle'}">
+                                    <isloop items="${lineItem.bundledProductLineItems}" var="lineItem">
+                                        <isinclude template="review/addratingreview" />
+                                    </isloop>
+                                <iselse>
+                                    <isinclude template="review/addratingreview" />
+                                </isif>
+                            </isif>
+                        </div>
+                       <div class="col"></div>
+                    </div>
+                </isloop>
+            </isloop>
+        <iselse>
+            <div class="card">
+                <div class="card-body reviewed">
+                    You review has submitted successfully. Thank you.
+                </div>
+            </div>
+        </isif>
+    </div>
+</isdecorate>

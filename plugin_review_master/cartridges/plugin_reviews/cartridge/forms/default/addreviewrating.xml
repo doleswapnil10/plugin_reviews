@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<form xmlns="http://www.demandware.com/xml/form/2008-04-19">
+    <field formid="review" label="label.input.review" type="string" mandatory="true" binding="review"
+           max-length="100" missing-error="review.missing" range-error="error.message.100orless"/>
+           
+    <field formid="rating" label="label.input.rating" type="string" mandatory="true" binding="review"
+           max-length="3" missing-error="rating.missing" range-error="error.message.100orless"/>
+           
+    <field formid="orderNo" label="label.input.orderNo" type="string" mandatory="true"
+           missing-error="orderNo.missing" range-error="error.message.orderNo"/>
+           
+    <field formid="lineItem" label="label.input.lineItem" type="string" mandatory="true"
+           missing-error="lineItem.missing" range-error="error.message.lineItem"/>
+           
+    <field formid="nickname" label="label.input.nicknamde" type="string" mandatory="true" binding="nickname"
+           missing-error="nickname.missing" range-error="error.message.100orless"/>
+           
+    <action formid="apply" valid-form="true"/>
+</form>

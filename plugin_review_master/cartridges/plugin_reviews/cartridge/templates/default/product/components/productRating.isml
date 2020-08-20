@@ -1,0 +1,14 @@
+<isloop items="${[1, 2, 3, 4, 5]}" var="star">
+    <i class="fa
+        <isif condition="${rating}">
+            <isif condition="${rating >= star}">
+                fa-star
+            <iselseif condition="${(rating % 1 > 0) && (Math.ceil(rating) >= star)}">
+                fa-star-half-o
+            <iselse>
+                fa-star-o
+            </isif>
+        </isif>
+            " aria-hidden="true">
+    </i>
+</isloop>
